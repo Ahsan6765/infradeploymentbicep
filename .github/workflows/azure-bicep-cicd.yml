@@ -32,6 +32,6 @@ jobs:
           creds: ${{ secrets.AZURE_SPN_CREDENTIAL }}
           
       - name: Az Bicep Deployment
-        working-directory: '{github.workspace}/src/bicep'
+        working-directory: '${{github.workspace}}/src/bicep'
         run: |
           az deployment group create --resourcegroup ah-infra-deployment-rg --template-file ./infra.bicep --parameters @infra.parameters.json
