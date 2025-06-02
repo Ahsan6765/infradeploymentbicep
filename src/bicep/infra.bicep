@@ -1,5 +1,11 @@
+targetScope = 'subscription'
+
+
 @description('Location for all resources')
 param location string = 'centralus'
+
+@description('The name of the resource group')
+param resourceGroupName string
 
 @description('SQL Server name (must be globally unique)')
 param sqlServerName string
@@ -14,6 +20,12 @@ param sqlAdminPassword string
 @description('SQL Database name')
 param sqlDatabaseName string = 'mydatabase'
 
+// Resource Group
+
+resource resourcegroup 'Microsoft.Resources/resourceGroups@2022-02-01-preview' = {
+  name: resourceGroupName
+  location: location
+}
 
 //
 // SQL Server
