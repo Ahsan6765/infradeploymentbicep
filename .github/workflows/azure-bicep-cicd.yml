@@ -37,3 +37,4 @@ jobs:
           template: ./src/bicep/infra.bicep
           parameters: ./src/bicep/infra.parameters.json
           deploymentName: deploy-infra
+          failOnStdErr: false
