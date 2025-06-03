@@ -24,6 +24,7 @@ jobs:
         uses: azure/arm-deploy@v2
         with:
           scope: subscription
+          region: centralus
           template: ./resourceGroup.bicep
           parameters: ''
           deploymentName: create-resource-group
